@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
-//import shortid from 'shortid';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/actions';
+import { addContact } from '../../redux/operations';
 import s from './Form.module.css';
 
 export default function Nameform() {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
   const onSubmit = (name, number) => dispatch(addContact(name, number));
-  // class Form extends Component {
-  // state = {
-  //   name: '',
-  //   number: ''
-  // };
-  // function Form({ onSubmit }) {
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
